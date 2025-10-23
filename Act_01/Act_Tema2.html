@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>EJERCICIOS TEMA 2 </h2>
+
+    Dime una edad : <input type="number" id="edad" name="edad">
+    <button onclick="option()">Validar</button>
+    
+    <h4>HORA EN 30 MINUTOS</h4>
+    <script>
+        let media = false;
+
+        for(let hora = 9; hora <= 21; hora++){
+
+            if(!media){
+
+            document.write(hora + ":00 hrs<br>");
+            media = true;
+
+            }
+            else{
+                document.write(hora + ":30 hrs<br>");
+                media = false;
+            }
+            
+
+            if(hora === 21 && media === true){
+                document.write(hora + ":30 hrs<br>");
+                break;
+            }
+
+        }
+    </script>
+
+    <h4>HORA EN 5 MINUTOS Ejer 6</h4>
+        
+    <script>
+
+        for(let hora = 9; hora <= 21; hora++){
+
+            for(let min = 0; min <= 60;min + 5){
+
+                document.write(hora + ":" + min + "<br>");
+            }
+
+            if(hora === 21){
+                break
+            }
+            
+        }
+
+    </script>
+    <h4>
+        VALIDAR NOMBRE Y APELLIDO
+
+    </h4>
+
+    
+</body>
+
+
+</html>

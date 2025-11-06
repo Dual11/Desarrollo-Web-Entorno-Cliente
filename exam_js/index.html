@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>altura y peso</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <h2>CALCULADORA</h2>
+    </header>
+    <div class="imc">
+        <h4>Calculadora IMC</h4>
+    <form>
+    altura: <input type="number" id="altura">
+    peso: <input type="number" id="peso">
+
+    <button type="button"onclick=calcular()>Calcular</button>
+    </form>
+    
+    <div id="resultado">
+
+    </div>
+    
+    </div>
+
+    <div class="fcm">
+    <h4>Calculadora FCM</h4>
+
+    edad: <input type="number" id="edad" >
+
+    sexo (H/M): <input type="text" id="sexo" maxlength="1">
+
+    <button type="button" onclick="calcularFCM()">Calcular FCM</button>
+
+    <div id="resultFCM">
+
+    </div>
+
+    </div>
+
+    <div class="categoria">
+
+    <h4>Calculadora de Categoría (Programador)</h4>
+
+    Año de nacimiento: <input type="number" id="age" min="1950" max="2010" >
+
+    <button type="button" onclick="calcularCategoria()">Calcular Categoría</button>
+
+    <div id="resultCat">
+    
+    </div>
+    </div>
+
+    <div class="horario">
+        <h4>Ver Horario</h4>
+
+    <button type="button" onclick="mostrarHorario()">Mostrar Horario</button>
+    
+    <div id="horario">
+    
+    </div>
+    </div>
+    
+    
+    <script src="funciones.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen JavaScript - Cliente</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="code.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.13/dayjs.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="section">
+            <h4>Cuantos días para fin de clase</h4>
+            <button type="button" onclick="finClase()">Ver días</button>
+            <div id="resultado"></div>
+        </div>
+
+        <div class="section">
+            <h4>Cumpleaños que caen en domingo</h4>
+                <h4> Día cumple </h4>
+            <input type="number" id="dia" min="1" max="31">
+            <h4> Mes cumple: </h4>
+            <input type="number" id="mes" min="1" max="12">
+            <button type="button" onclick="cumple()">Ver días domingo</button>
+            <div id="resultCumple"></div>
+        </div>
+
+
+        <div class="section">
+            <h4>Formato de fecha</h4>
+            <select id="formato">
+                <option value="1">Formato 1</option>
+                <option value="2">Formato 2</option>
+                <option value="3">Formato 3</option>
+            </select>
+            <button type="button" onclick="mostrarFecha()">Ver formatos fecha</button>
+            <p id="resultFecha"></p>
+        </div>
+
+
+        <div class="section">
+            <h4>Formato de horas</h4>
+            <select id="form-hora">
+                <option value="1">Formato 1 (24hrs)</option>
+                <option value="2">Formato 2 (12hrs)</option>
+            </select>
+            <button type="button" onclick="mostrarHora()">Ver formatos hora</button>
+            <p id="resultHora"></p>
+        </div>
+
+
+        <div class="section">
+            <h4>Opciones matemáticas</h4>
+            <select id="form-math">
+                <option value="1">Potencia</option>
+                <option value="2">Raíz</option>
+                <option value="3">Redondeo</option>
+                <option value="4">Trigonometría</option>
+            </select>
+            <button type="button" onclick="calcular()">Calcular</button>
+            <p id="resultMath"></p>
+        </div>
+
+
+        <div class="section">
+            <h4>Introduce el radio (cm)</h4>
+            <input type="number" id="radio" placeholder="Ej: 5">
+            <button type="button" onclick="calcularRadio()">Calcular</button>
+            <p id="resultRadio"></p>
+        </div>
+
+
+        <div class="section">
+            <h4>Dime un número entero</h4>
+            <input type="number" id="numero" placeholder="Ej: 42">
+            <button type="button" onclick="convertir()">Mostrar resultado</button>
+            <p id="resultEntero"></p>
+        </div>
+
+
+        <div class="section">
+            <h4>Nombre y apellidos</h4>
+            <input type="text" id="nameCompleto" placeholder="Juan Pérez García">
+            <button type="button" onclick="nombreCompleto()">Mostrar resultados</button>
+            <p id="resultNombre"></p>
+        </div>
+
+
+        <div class="section">
+            <h4>Escribe una contraseña</h4>
+            <input type="text" id="contra" placeholder="Mínimo 8 caracteres">
+            <button type="button" onclick="contraseña()">Ver si es segura</button>
+            <p id="resultContra"></p>
+        </div>
+
+    </div>
+
+</body>
+</html>

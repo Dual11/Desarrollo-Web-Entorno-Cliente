@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>altura y peso</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+
+    <header>
+        <h2>Asociación Deportiva Castro Urdiales</h2>
+        
+        <div id="calendario">
+            <div class="dia-semana" id="diaSemana"></div>
+            <div class="dia" id="dia"></div>
+            <div class="mes-anyo" id="mesAnyo"></div>
+        </div>
+    </header>
+
+    <div class="contra">
+    <h4>Comprueba si tu contraseña es segura</h4>
+
+    Contraseña: <input type="text" id="contra">
+    <button onclick="contraseña()">Ver si es segura</button>
+
+    <p id="resultContra"></p>
+    </div>
+    <div class="imc">
+        <h4>Calculadora IMC</h4>
+    <form>
+    altura: <input type="number" id="altura">
+    peso: <input type="number" id="peso">
+
+    <button type="button"onclick=calcular()>Calcular</button>
+    </form>
+    
+    <div id="resultado">
+
+    </div>
+    
+    </div>
+
+    <div class="fcm">
+    <h4>Calculadora FCM</h4>
+
+    edad: <input type="number" id="edad" >
+
+    sexo (H/M): <input type="text" id="sexo" maxlength="1">
+
+    <button type="button" onclick="calcularFCM()">Calcular FCM</button>
+
+    <div id="resultFCM">
+
+    </div>
+
+    </div>
+
+    <div class="categoria">
+
+    <h4>Calculadora de Categoría (Programador)</h4>
+
+    Año de nacimiento: <input type="number" id="age" min="1950" max="2010" >
+
+    <button type="button" onclick="calcularCategoria()">Calcular Categoría</button>
+
+    <div id="resultCat">
+    
+    </div>
+    </div>
+
+    <div class="horario">
+        <h4>Ver Horario</h4>
+
+    <button type="button" onclick="mostrarHorario()">Mostrar Horario</button>
+    
+    <div id="horario">
+    
+    </div>
+    </div>
+
+    <footer>
+        <p>Asociación Deportiva Castro Urdiales.</p>
+        <p>Web desarrollada por:Alex Tobar Teltor. </p>
+        <p><a href="javascript:void(0)" onclick="abrirAvisoLegal()">Aviso legal</a></p>
+    </footer>
+
+    <div id="popupBienvenida" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 2px solid #577488; border-radius: 10px; text-align: center; z-index: 1000;">
+        <h3>¡Bienvenido a la Asociación Deportiva Castro Urdiales!</h3>
+        <p>Explora nuestras actividades y únete a la comunidad deportiva.</p>
+        <button onclick="cerrarPopup()" style="margin-top: 10px;">Cerrar</button>
+    </div>
+    
+    
+    <script src="funciones.js"></script>
+    <script src="newFuncion.js"></script>
+    
+</body>
+</html>

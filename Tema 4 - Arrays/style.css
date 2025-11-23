@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 15px 0;
+}
+
+.contenedor-fila {
+    display: flex;
+    gap: 18px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px 20px;
+    justify-content: center;
+    scroll-padding: 0 20px;
+}
+
+.contenedor-fila::-webkit-scrollbar {
+    height: 8px;
+}
+.contenedor-fila::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.contenedor-fila::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border-radius: 10px;
+}
+
+.imc, .fcm, .categoria, .horario {
+    background: white;
+    padding: 16px;
+    width: 210px;
+    min-width: 210px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    text-align: center;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+h4 {
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    color: #333;
+}
+
+input[type="number"], input[type="text"] {
+    padding: 7px;
+    margin: 6px 0;
+    width: 85%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+button {
+    background-color: #437293;
+    color: white;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-top: auto;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #576a78;
+}
+
+#resultado, #resultFCM, #resultCat, #horario {
+    margin-top: 12px;
+    padding: 8px;
+    background-color: #eaf3fc;
+    border-radius: 6px;
+    min-height: 35px;
+    font-size: 13px;
+    font-weight: bold;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+#horario table {
+    font-size: 11px;
+}
+#horario th, #horario td {
+    padding: 4px;
+}

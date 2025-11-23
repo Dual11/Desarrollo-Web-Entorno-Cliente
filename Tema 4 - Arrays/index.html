@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMA 4 - JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        
+        <h1>EJERCICIO - ANTERIOR</h1>
+    <div class="contenedor-fila">
+
+        <div class="imc">
+            <h4>Calculadora IMC</h4>
+            altura: <input type="number" id="altura"><br><br>
+            peso: <input type="number" id="peso"><br><br>
+            <button type="button" onclick="calcular()">Calcular</button>
+            <div id="resultado"></div>
+        </div>
+
+        <div class="fcm">
+            <h4>Calculadora FCM</h4>
+            edad: <input type="number" id="edad"><br><br>
+            sexo (H/M): <input type="text" id="sexo" maxlength="1"><br><br>
+            <button type="button" onclick="calcularFCM()">Calcular FCM</button>
+            <div id="resultFCM"></div>
+        </div>
+
+        <div class="categoria">
+            <h4>Calculadora de Categoría (Programador)</h4>
+            Año de nacimiento: <input type="number" id="age" min="1950" max="2010"><br><br>
+            <button type="button" onclick="calcularCategoria()">Calcular Categoría</button>
+            <div id="resultCat"></div>
+        </div>
+
+        <div class="horario">
+            <h4>Ver Horario</h4>
+            <button type="button" onclick="mostrarHorario()">Mostrar Horario</button>
+            <div id="horario"></div>
+        </div>
+
+    </div>
+    <!--Ejercicios anteriores - no tocar-->
+
+
+    <!--Arrays, Funciones y Objetos - Tema 4 -->
+
+    <h1>Arryas, Funciones y Objetos</h1>
+    <div class="contenedor-fila">
+
+        <div class="paises">
+            <h4>Gestor de Paises</h4>
+            <p id="lista"><strong>Países:</strong> España, Francia, Italia, Portugal</p>
+
+            <div id="resultArray">
+
+            </div>
+            <div class="botones">
+                <button type="button" onclick="sizeArray()">Tamaño del array</button>
+                <button type="button" onclick="verTodos()">Ver Todos</button>
+                <button type="button" onclick="reverse()">Al reves</button>
+                <button type="button" onclick="listOrdenados()">Ordenados Alfabeticamente</button><br><br>
+                <button type="button" onclick="addInicio()">Añadir al Principio</button>
+                <button type="button" onclick="addFinal()">Añadir al Final</button>
+                <button type="button" onclick="deleteInicio()">Borrar el primero</button>
+                <button type="button" onclick="deleteFinal()">Borrar el ultimo</button><br><br>
+                <button type="button" onclick="verPosicion()">Ver Posicion</button>
+                <button type="button" onclick="buscarPais()">Buscar Pais</button>
+                <button type="button" onclick="verIntervalo()">Intervalos</button>
+
+            </div>
+            
+        </div>
+
+
+    </div>
+
+    <h1>Menu - Interactivo</h1>
+    <div class="contenedor-fila">
+
+        <div class="paises-menu">
+            <h4>Menu Interactivo</h4>
+
+            <div id="list-paises">
+
+            </div>
+
+            <div id="historial">
+                <strong>historial de Operaciones</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <h1>Menu Interactivo - Discos</h1>
+    <div class="contenedor-fila">
+
+        <div class="discos-menu">
+
+            <div id="lista-discos">
+
+            </div>
+
+            <div id="historial-discos">
+                <strong>historial de Operaciones</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!--EJERCICIO OBJETOS Y MENU -->
+    <script src="disco.js"></script>
+    <script src="discos_menu.js"></script>
+
+    <!--EJERCICIO CON EL MENU -->
+    <script src="array_menu.js"></script>
+    <script src="arrays.js"></script>
+
+
+    <!--EJERCICIO ANTERIOR -->
+    <script src="funciones.js"></script>
+</body>
+</html>

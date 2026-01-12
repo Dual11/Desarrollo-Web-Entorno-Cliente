@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Producto Azul - Registro</title>
+</head>
+<body>
+
+<h2>Registro de Bolsa</h2>
+
+<form id="formGroup">
+    <p><strong>Intentos fallidos:</strong>
+        <input type="text" id="intentos" readonly style="width:60px; text-align:center;">
+        <button type="button" onclick="resetearContador()">Reiniciar contador</button>
+    </p>
+    <p>fecha de creacion<br>
+    <input type="text" id="fecha" placeholder="dd/mm/aaaa"></p>
+
+    <p>Cocinero (WW$1234)<br>
+    <input type="text" id="cocinero"></p>
+
+    <p>Destinatario (NM_alburquerque:1234)<br>
+    <input type="text" id="destinatario"></p>
+
+    <p>Gramos (100–5000)<br>
+    <input type="number" id="gramos"></p>
+
+    <p>Composicion (200gC3OH7)<br>
+    <input type="text" id="composicion"></p>
+
+    <p>Cuenta EEUU (AB12-345678901234-34)<br>
+    <input type="text" id="cuenta"><br>
+    <strong>Cuenta limpia: </strong><span id="cuentaFinal">—</span></p>
+
+    <button type="submit">Registrar</button>
+
+</form>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    const intentosInput = document.getElementById('intentos');
+    const contador = getCookie('intentosFallidos') || '0';
+    intentosInput.value = contador;
+});
+
+function resetearContador() {
+    deleteCookie('intentosFallidos');
+    document.getElementById('intentos').value = '0';
+    alert('Contador de intentos reiniciado');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const form = document.getElementById('formGroup');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        let hayError = false;
+
+        const fecha = document.getElementById('fecha');
+        if (!/^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d{2}$/.test(fecha.value.trim())) {
+            alert("Fecha incorrecta");
+            fecha.focus();
+            hayError = true;
+        }
+
+        const cocinero = document.getElementById('cocinero');
+        if (!/^[A-Z]{2}[^A-Za-z0-9]\d{4}$/.test(cocinero.value.trim())) {
+            alert("error, sigue el ejemplo");
+            hayError = true;
+        }
+
+        const destinatario = document.getElementById('destinatario');
+        if (!/^[A-Z]{2,3}_[a-z]+:\d{4}$/.test(destinatario.value.trim())) {
+            alert("error, sigue el ejemplo");
+            hayError = true;
+        }
+
+        const gramos = document.getElementById('gramos');
+        const g = parseInt(gramos.value);
+        if (isNaN(g) || g < 100 || g > 5000) {
+            alert("error de rango");
+            hayError = true;
+        }
+
+        const composicion = document.getElementById('composicion');
+        if (!/^\d{1,4}g[A-Za-z]{1,2}\d?[A-Za-z]{1,2}\d?$/.test(composicion.value.trim())) {
+            alert("error, sigue el ejemplo");
+            hayError = true;
+        }
+
+        const cuenta = document.getElementById('cuenta');
+        const cuentaFinal = document.getElementById('cuentaFinal');
+        const valorCuenta = cuenta.value.trim();
+
+        let cuentaLimpia = "—";
+
+        if (valorCuenta) {
+            const partes = valorCuenta.split('-');
+            if (partes.length !== 3) {
+                alert("La cuenta debe tener 3 partes separadas por -");
+                hayError = true;
+            } else {
+                const letras = partes[0];
+                const numeros = partes[1];
+                const control = partes[2];
+
+                if (!/^[A-Z]{2}$/.test(letras) || numeros.length !== 12 || control.length !== 2) {
+                    alert("Formato cuenta incorrecto");
+                    hayError = true;
+                } else {
+                    const v1 = letras.charCodeAt(0) - 64;
+                    const v2 = letras.charCodeAt(1) - 64;
+                    const suma = v1 + v2;
+                    const sumaStr = suma < 10 ? '0' + suma : '' + suma;
+
+                    if (sumaStr !== numeros.substring(0,2)) {
+                        alert("Los dos primeros números no coinciden con la suma de letras");
+                        hayError = true;
+                    }
+
+                    const mitad1 = numeros.substring(0,6).split('').reduce((a,b)=>a+Number(b),0);
+                    const mitad2 = numeros.substring(6).split('').reduce((a,b)=>a+Number(b),0);
+
+                    const ctrl1 = Math.floor(mitad1 / 6);
+                    const ctrl2 = Math.floor(mitad2 / 6);
+
+                    if (ctrl1 !== Number(control[0]) || ctrl2 !== Number(control[1])) {
+                        alert("Dígitos de control incorrectos");
+                        hayError = true;
+                    }
+
+                    if (!hayError) {
+                        cuentaLimpia = letras + numeros + control;
+                    }
+                }
+            }
+        }
+
+        cuentaFinal.textContent = cuentaLimpia;
+
+    if (hayError) {
+        let contador = parseInt(getCookie('intentosFallidos') || '0');
+        contador++;
+        setCookie('intentosFallidos', contador, 30);
+        document.getElementById('intentos').value = contador;
+    } else {
+        alert("¡Bolsa registrada correctamente!");
+        document.getElementById('formGroup').reset();
+        document.getElementById('cuentaFinal').textContent = "—";
+    }
+    });
+});
+</script>
+</body>
+</html>

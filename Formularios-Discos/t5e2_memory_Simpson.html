@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory - Los Simpson</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            background: #f0f0f0;
+        }
+        
+        table {
+            border-collapse: collapse;
+            margin: 30px auto;
+        }
+        
+        td {
+            width: 110px;
+            height: 110px;
+            background: #333;
+            border: 2px solid #555;
+            cursor: pointer;
+            position: relative;
+            
+        }
+        td img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+        }
+        .descubierta {
+            background: #28a745;
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Memory - Los Simpson</h1>
+    <p>Intentos: <strong id="contador">0</strong></p>
+
+    <table id="tablero">
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+    </table>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

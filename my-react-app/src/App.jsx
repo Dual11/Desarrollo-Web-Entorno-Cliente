@@ -1,178 +1,90 @@
-/*
-* Parte A: onClick y el objeto event
+
+/*PARTE A
 *
-
 function App() {
-    const handleClick = (event) => {
-        console.log('Hola desde React! - alex1')
-        console.log(event)
-    }
+
+    const sharedStyle = {color:'red' };
+
     return (
-        <button onClick={handleClick}>
-            Click me
-        </button>
-    )
+        <div>
+            <h1 style={{ color: 'blue', textAlign: 'center' }}>Alex - Buenos dias</h1>
+
+            <h4 style={sharedStyle}>Alex con estilo rojo </h4>
+            <h4 style={{ ...sharedStyle, color: 'green' }}>alex con estilo compartido, verde</h4>
+        </div>
+    );
 }
-export default App
-
- */
-
-/*
-*   Parte B: Cambiar la UI con estado + evento
 *
-
-
-
-import { useState } from 'react'
-function App() {
-    const [isParagraphVisible, setIsParagraphVisible] = useState(true)
-    const toggleStatus = () => {
-        setIsParagraphVisible(!isParagraphVisible)
-    }
-    return (
-        <>
-            <h1>Ocultar texto</h1>
-            {isParagraphVisible && (
-                <p>Alex1, texto a ocultar</p>
-            )}
-            <button onClick={toggleStatus}>
-                {isParagraphVisible ? 'Hide' : 'Show'} Texto
-            </button>
-        </>
-    )
-}
-export default App
-
  */
+/**
+ *  PARTE C
+import './style.css';
 
-/*
-*   Parte C: onChange (entrada controlada)
-*
-
-import { useState } from 'react'
 function App() {
-    const [nickname, setNickname] = useState('')
+    return (
+        <div>
+            <p className="paragraph-text">Texto con estilos</p>
+        </div>
+    );
+}
+    */
+/**
+import styles from './App.module.css';
+
+function App() {
+    return (
+        <div>
+            <h2 className={styles.title}>Titulo desde la nueva carpeta css</h2>
+            <p className={styles.baseText}>Texto base</p>
+            <p className={`${styles.baseText} ${styles.special}`}>
+                Combinando clases
+            </p>
+        </div>
+    );
+}
+    */
+// App.jsx (versión final con Tailwind + un toque de estado)
+import { useState } from 'react';
+
+function App() {
+    const [likes, setLikes] = useState(0);
 
     return (
-        <>
-            <h1>Alias del jugador</h1>
-            <input
-                type="text"
-                placeholder="Escribe tu alias"
-                value={nickname}
-                onChange={(e) => setNickname(e.target.value)}
-            />
-            <p>Tu alias es: <strong>{nickname || '...'} </strong></p>
-        </>
-    )
-}
-export default App
+        <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4 sm:p-6">
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden max-w-md w-full transition-all duration-300 hover:shadow-2xl">
+                <div className="p-6 sm:p-8">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3">
+                        Tarjeta Increíble
+                    </h2>
 
- */
+                    <p className="text-gray-600 mb-6 text-base sm:text-lg">
+                        Descripción corta. Hover en botón + responsive.
+                    </p>
 
-/*
-*   Parte D: onSubmit (formulario)
-*
+                    <p className="text-sm text-gray-500 mb-4">
+                        Likes: <strong>{likes}</strong>
+                    </p>
 
+                    <button
+                        onClick={() => setLikes(likes + 1)}
+                        className="
 
-import { useState } from 'react'
-function App() {
-    const [email, setEmail] = useState('')
-    const [msg, setMsg] = useState('')
-    const [msj,setMsj] = useState('')
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        setMsg(`Inscripcion enviada para: ${email}`)
-        setMsj(`Tu mensaje es:  ${msj}`)
-    }
-    return (
-        <>
-            <h1>Registro</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="email"
-                    placeholder="tu@email.com"
-                    value={email}
-
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-                <input
-                    type="msj"
-                    placeholder="Escribe tu msj"
-                    value={msj}
-
-                    onChange={(e)=> setMsj(e.target.value)}
-                    required
-                />
-                <button type="submit">Enviar</button>
-            </form>
-            {msg && <p>{msg}</p>}
-            {msj && <p>{msj}</p>}
-
-        </>
-    )
-}
-export default App
-
- */
-
-import { useState } from 'react'
-function App() {
-    const [hideText, setHideText] = useState(false)
-    const [contador, setContador] = useState(0)
-    const[modo,setModo]= useState("")
-    const toggleStatus = () => {
-
-        setHideText((!hideText))
-    }
-
-    const msj = (e) => {
-        e.preventDefault()
-        setModo(`${modo}`)
-
-    }
-    return (
-
-        <h2>
-            <h4>Ocultar texto</h4>
-            {hideText && (
-                <p>Soy el texto oculto</p>
-            )}
-            <button onClick={toggleStatus}>
-                {hideText ? 'Hide' : 'Show'} Texto
-            </button>
-
-            <h4>
-                <h4>Boton de contador</h4>
-                <button onClick={() => setContador((n) => n + 1)}>+1
-                    Contador
-                </button>
-                <button onClick={() => setContador(0)}>Reset - Contador</button>
-
-                {contador > 0 && (
-                    <h4>El contador tiene --- {contador}.</h4>
-                )}
-
-            </h4>
-
-            <h4>
-                <form onSubmit={msj}>
-
-                    <input
-                        type="modo"
-                        placeholder="modo"
-                        value={modo}
-
-                        onChange={(e) => setModo(e.target.value)}
-                        required
-                    />
-                </form>
-                {modo && <p>{modo}</p>}
-            </h4>
-        </h2>
-    )
+                              px-1 py-1 text-white font-medium
+                              bg-gradient-to-r from-purple-600 to-indigo-600
+                              rounded-lg shadow-md
+                              hover:from-purple-700 hover:to-indigo-700
+                              hover:shadow-xl hover:underline
+                              active:scale-95
+                              transition-all duration-300
+                            "
+                    >
+                        Dar like
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
 }
 
-export default App
+export default App;
+

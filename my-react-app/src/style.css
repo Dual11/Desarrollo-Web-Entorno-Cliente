@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+.paragraph-text {
+    font-size: 1.2rem;
+    color: red;
+}
+
+.paragraph-text:hover {
+    color: tomato;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .paragraph-text {
+        font-size: 1rem;
+    }
+}

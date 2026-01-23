@@ -5,30 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dad9fff-e1b0-4aeb-8687-1dd13c20144e" name="Changes" comment="practica react">
-      <change beforePath="$PROJECT_DIR$/../Act_01/Ejer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../React-pract2/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../React-pract2/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema 3 - JavaScript/Readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema 3 - JavaScript/funciones.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema 3 - JavaScript/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema 3 - JavaScript/newFuncion.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema 3 - JavaScript/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema 3 - ObjetosJs/code.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema 3 - ObjetosJs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema 3 - ObjetosJs/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema 4 - Arrays/Readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema 4 - Arrays/array_menu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema 4 - Arrays/arrays.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema 4 - Arrays/disco.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema 4 - Arrays/discos_menu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema 4 - Arrays/funciones.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema 4 - Arrays/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema 4 - Arrays/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-react-app/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-react-app/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-react-app/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-react-app/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exam_js/funciones.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exam_js/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exam_js/style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,26 +25,28 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="38As8Zs8Wz7bRZXmQeHOyyOPjLg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.App.jsx.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;practica-react-nivel1-alex&quot;,
-    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Volumes/Proyectos_DAW/Entorno_Cliente_22_11/alex_react&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.App.jsx.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "practica-react__nivel7",
+    "ignore_missing_gitignore": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Volumes/Proyectos_DAW/Entorno-Cliente",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -86,6 +66,7 @@
       <workItem from="1768404903205" duration="697000" />
       <workItem from="1768841837036" duration="4905000" />
       <workItem from="1768925333670" duration="1066000" />
+      <workItem from="1769202629324" duration="30000" />
     </task>
     <task id="LOCAL-00001" summary="done react">
       <option name="closed" value="true" />
@@ -134,6 +115,9 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
     <MESSAGE value="done react" />
     <MESSAGE value="practica react" />
     <option name="LAST_COMMIT_MESSAGE" value="practica react" />

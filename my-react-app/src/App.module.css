@@ -1,0 +1,16 @@
+/* src/App.module.css */
+.title {
+    color: purple;
+    text-transform: uppercase;
+}
+
+.baseText {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.special {
+    composes: baseText;
+    font-weight: bold;
+    color: darkgreen;
+}

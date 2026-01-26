@@ -1,90 +1,213 @@
 
-/*PARTE A
+/* PARTE A
 *
-function App() {
-
-    const sharedStyle = {color:'red' };
-
-    return (
-        <div>
-            <h1 style={{ color: 'blue', textAlign: 'center' }}>Alex - Buenos dias</h1>
-
-            <h4 style={sharedStyle}>Alex con estilo rojo </h4>
-            <h4 style={{ ...sharedStyle, color: 'green' }}>alex con estilo compartido, verde</h4>
-        </div>
-    );
-}
-*
- */
-/**
- *  PARTE C
-import './style.css';
-
-function App() {
-    return (
-        <div>
-            <p className="paragraph-text">Texto con estilos</p>
-        </div>
-    );
-}
-    */
-/**
-import styles from './App.module.css';
-
-function App() {
-    return (
-        <div>
-            <h2 className={styles.title}>Titulo desde la nueva carpeta css</h2>
-            <p className={styles.baseText}>Texto base</p>
-            <p className={`${styles.baseText} ${styles.special}`}>
-                Combinando clases
-            </p>
-        </div>
-    );
-}
-    */
-// App.jsx (versión final con Tailwind + un toque de estado)
 import { useState } from 'react';
 
 function App() {
-    const [likes, setLikes] = useState(0);
+    const [username, setUsername] = useState('');
 
     return (
-        <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4 sm:p-6">
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden max-w-md w-full transition-all duration-300 hover:shadow-2xl">
-                <div className="p-6 sm:p-8">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3">
-                        Tarjeta Increíble
-                    </h2>
+        <form>
 
-                    <p className="text-gray-600 mb-6 text-base sm:text-lg">
-                        Descripción corta. Hover en botón + responsive.
-                    </p>
+            <h4>Nombre User</h4>
+            <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+            />
+        </form>
+    );
+}
+export default App;
+*/
 
-                    <p className="text-sm text-gray-500 mb-4">
-                        Likes: <strong>{likes}</strong>
-                    </p>
+/*PARTE B
+*
 
-                    <button
-                        onClick={() => setLikes(likes + 1)}
-                        className="
+import { useState } from 'react';
 
-                              px-1 py-1 text-white font-medium
-                              bg-gradient-to-r from-purple-600 to-indigo-600
-                              rounded-lg shadow-md
-                              hover:from-purple-700 hover:to-indigo-700
-                              hover:shadow-xl hover:underline
-                              active:scale-95
-                              transition-all duration-300
-                            "
-                    >
-                        Dar like
-                    </button>
-                </div>
-            </div>
-        </div>
+function App() {
+    const [username, setUsername] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        alert(username);
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <h4>Añadir User</h4>
+            <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+            />
+            <button type="submit">Submit</button>
+        </form>
     );
 }
 
 export default App;
 
+*
+ */
+
+/*PARTE C
+*
+import {useState} from "react";
+
+function App() {
+    const [username, setUsername] = useState('');
+    const [usernameError, setUsernameError] = useState('');
+
+    const handleUsername = (e) => {
+        const { value } = e.target;
+
+        setUsername(value);
+        if (value.length <= 6) {
+            setUsernameError('El username debe tener más de 6 caracteres');
+        } else {
+            setUsernameError('');
+        }
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if (usernameError) {
+            alert('Error en el form');
+        } else {
+            alert('Todo correcto: ' + username);
+        }
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <h4>Añadir User</h4>
+            <input
+                type="text"
+                value={username}
+                onChange={handleUsername}
+            />
+            <p style={{color: 'red'}}>{usernameError}</p>
+            <button type="submit">Submit</button>
+        </form>
+    );
+}
+
+export default App;
+
+ */
+import { useState } from 'react';
+
+function App() {
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const [usernameError, setUsernameError] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [passwordError, setPasswordError] = useState('');
+
+
+    const validateUsername = (value) => {
+        if (value.length <= 6) {
+            setUsernameError('Minimo 7 caracteres');
+        } else {
+            setUsernameError('');
+        }
+    };
+
+    const validateEmail = (value) => {
+        if (!value.includes('@') || !value.includes('.')) {
+            setEmailError('Email debe contener @ y .');
+        } else {
+            setEmailError('');
+        }
+    };
+
+    const validatePassword = (value) => {
+        if (value.length < 8) {
+            setPasswordError('Minimo 8 caracteres');
+        } else {
+            setPasswordError('');
+        }
+    };
+
+    const handleUsernameChange = (e) => {
+        const value = e.target.value;
+        setUsername(value);
+        validateUsername(value);
+    };
+
+    const handleEmailChange = (e) => {
+        const value = e.target.value;
+        setEmail(value);
+        validateEmail(value);
+    };
+
+    const handlePasswordChange = (e) => {
+        const value = e.target.value;
+        setPassword(value);
+        validatePassword(value);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (usernameError || emailError || passwordError) {
+            alert('hay errores');
+        }
+    };
+
+    const hasErrors = usernameError || emailError || passwordError;
+
+    return (
+        <div>
+            <h2>Registro basico</h2>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label>Usuario</label><br />
+                    <input
+                        type="text"
+                        value={username}
+                        onChange={handleUsernameChange}
+                    />
+                    <p style={{color: 'red'}}>{usernameError}</p>
+                </div>
+
+                <div>
+                    <label>Email</label><br />
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={handleEmailChange}
+                    />
+                    <p style={{color: 'red'}}>{emailError}</p>
+                </div>
+
+                <div>
+                    <label>Contraseña</label><br />
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={handlePasswordChange}
+                    />
+                    <p style={{color: 'red'}}>{passwordError}</p>
+                </div>
+
+                <button
+                    type="submit"
+                    disabled={hasErrors}
+                    style={{
+                        padding: '10px 20px',
+                        backgroundColor: hasErrors ? 'red' : 'green',
+                        cursor: hasErrors ? 'not-allowed' : 'pointer'
+                    }}
+                >
+                    Registrarse
+                </button>
+            </form>
+        </div>
+    );
+}
+
+export default App;
